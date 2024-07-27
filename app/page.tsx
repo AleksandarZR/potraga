@@ -29,16 +29,16 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-            <div>Znanjem do slatkisa!</div>
+            <h1 className={styles.headline}>Znanjem do slatkiša!</h1>
             <div className={styles.grid}>
-                {/* {numbers.map((n) => (
+                {numbers.map((n) => (
                     <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} isAnswerCorrect={false} />
-                ))} */}
-                <div className={styles.gridItem}>1</div>
+                ))}
+                {/* <div className={styles.gridItem}>1</div>
                 <div className={styles.gridItem}>2</div>
                 <div className={styles.gridItem}>3</div>
                 <div className={styles.gridItem}>4</div>
-                <div className={styles.gridItem}>5</div>
+                <div className={styles.gridItem}>5</div> */}
             </div>
         </main>
     );
