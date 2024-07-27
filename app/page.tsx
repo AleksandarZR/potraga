@@ -16,6 +16,9 @@ interface NumberSquare {
 var numberSquares = new Array<NumberSquare>();
 
 export default function Home() {
+    const [popUpVisible, setPopUpVisible] = useState(false);
+    const [question, setQuestion] = useState("Question");
+
     useEffect(() => {
         console.log("Initialize called");
         if (numberSquares.length === 0) {
@@ -27,18 +30,36 @@ export default function Home() {
         }
     }, []);
 
+    const numberClicked = (id: number, question: string) => {
+        console.log("Number clicked: " + id);
+        setQuestion(question);
+        setPopUpVisible(!popUpVisible);
+    }
+
+    const buttonOtkaziClicked = () => {
+        setPopUpVisible(false);
+    }
+
+    const buttonPotvrdiClicked = () => {
+        setPopUpVisible(false);
+    }
+
     return (
         <main className={styles.main}>
-            <h1 className={styles.headline}>Znanjem do slatkiša!</h1>
+            <div className={popUpVisible? styles.popUpWindow : styles.popUpWindowHidden}>
+                <div>{question}</div>
+                <input className={styles.answer}></input>
+                <div className={styles.buttons}>
+                    <div className={styles.button} onClick={buttonPotvrdiClicked}>Potvrdi</div>
+                    <div className={styles.button} onClick={buttonOtkaziClicked}>Otkaži</div>
+                </div>
+            </div>
+
+            <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em d<span className={styles.spanLetter3}>o</span> slat<span className={styles.spanLetter2}>k</span>iša!</h1>
             <div className={styles.grid}>
                 {numbers.map((n) => (
-                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} isAnswerCorrect={false} />
+                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} isAnswerCorrect={false} onNumberClicked={numberClicked}/>
                 ))}
-                {/* <div className={styles.gridItem}>1</div>
-                <div className={styles.gridItem}>2</div>
-                <div className={styles.gridItem}>3</div>
-                <div className={styles.gridItem}>4</div>
-                <div className={styles.gridItem}>5</div> */}
             </div>
         </main>
     );

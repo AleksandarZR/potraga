@@ -9,11 +9,16 @@ interface Props {
     question: string;
     imageURL: string;
     isAnswerCorrect: boolean;
+    onNumberClicked(id: number, question: string) : void;
     // onAnswered(id: number, isAnswerCorrect: boolean): void
 };
 
 export default function Number(props: Props) {
     const [answer, setAnswer] = useState("");
+
+    const numberClickedEventHandler = () => {
+        props.onNumberClicked(props.id, props.question);
+    }
 
     // const isAnswerCorrect = () => {
     //     if (props.answerExpected.includes(answer)) {
@@ -35,8 +40,8 @@ export default function Number(props: Props) {
             </div> */}
 
     return (
-        <div className={styles.gridItem} >
+        <div className={styles.gridItem} onClick={numberClickedEventHandler}>
             <div className={styles.imageNumber}>{props.id}</div>
-        </div >
+        </div>
     );
 }

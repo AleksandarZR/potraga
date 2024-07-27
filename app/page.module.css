@@ -1,5 +1,5 @@
 .main {
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -7,7 +7,63 @@
     /* padding: 6rem; */
     min-height: 100vh;
     width: 100%;
-    /* background-color: lightgreen; */
+    background-color: lightgreen;
+}
+
+.popUpWindowHidden {
+    display: none;
+}
+
+.popUpWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 30%;
+    background-color: orangered;
+    font-size: 1.2rem;
+    text-align: center;
+
+    border-radius: 15px;
+    box-shadow: 7px 7px 10px black;
+    /* background: linear-gradient(rgb(129, 127, 127), lightgrey); */
+    background-color: lightgray;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.answer {
+    min-height: 2rem;
+    min-width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    padding: 1rem;
+    border-radius: 5px;
+    min-width: 7rem; 
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 5px 5px 7px black;
+    font-weight: 700;
+    color: rgb(249, 180, 6);
+    background-color: darkgrey;
+    cursor: pointer;
 }
 
 .headline {
@@ -16,6 +72,21 @@
     font-size: 3rem;
     text-shadow: 2px 2px 2px black;
     text-align: center;
+}
+
+.spanLetter {
+    background-color: rgb(33, 33, 205);
+    border-radius: 5px;
+}
+
+.spanLetter2 {
+    background-color: rgb(54, 124, 51);
+    border-radius: 5px;
+}
+
+.spanLetter3 {
+    background-color: rgb(249, 59, 6);
+    border-radius: 5px;
 }
 
 .grid {
@@ -41,10 +112,8 @@
     padding-bottom: 50%;
     border-radius: 15px;
     box-shadow: 7px 7px 10px black;
-
-    /* background-color: rgb(96, 90, 90); */
-    /* background-color: rgb(116, 116, 209); */
     background: linear-gradient(rgb(116, 116, 209), rgb(153, 153, 249));
+    cursor: pointer;
 
     display: flex;
     flex-direction: column;
@@ -55,6 +124,7 @@
 .imageNumber {
     margin: 0;
     font-size: 5vw;
+    font-weight: 700;
     color: goldenrod;
     text-shadow: 2px 2px 5px black;
 }
@@ -63,6 +133,7 @@
     .headline {
         font-size: 2rem;
     }
+
     .grid {
         grid-template-columns: repeat(3, calc(33.33333% - 0.66666rem));
     }
