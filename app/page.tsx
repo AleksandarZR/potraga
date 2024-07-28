@@ -17,7 +17,9 @@ var numberSquares = new Array<NumberSquare>();
 
 export default function Home() {
     const [popUpVisible, setPopUpVisible] = useState(false);
+    const [activeNumber, setActiveNumber] = useState(0);
     const [question, setQuestion] = useState("Question");
+    const [answer, setAnswer] = useState("");
 
     useEffect(() => {
         console.log("Initialize called");
@@ -34,6 +36,8 @@ export default function Home() {
         console.log("Number clicked: " + id);
         setQuestion(question);
         setPopUpVisible(!popUpVisible);
+        setActiveNumber(id);
+        setAnswer("");
     }
 
     const buttonOtkaziClicked = () => {
@@ -41,24 +45,28 @@ export default function Home() {
     }
 
     const buttonPotvrdiClicked = () => {
+        if (numbers[activeNumber - 1].answerExpected.includes(answer)) {
+            numbers[activeNumber - 1].isAnswerCorrect = true;
+        }
+
         setPopUpVisible(false);
     }
 
     return (
         <main className={styles.main}>
-            <div className={popUpVisible? styles.popUpWindow : styles.popUpWindowHidden}>
+            <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden}>
                 <div>{question}</div>
-                <input className={styles.answer}></input>
+                <input className={styles.answer} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
                 <div className={styles.buttons}>
                     <div className={styles.button} onClick={buttonPotvrdiClicked}>Potvrdi</div>
                     <div className={styles.button} onClick={buttonOtkaziClicked}>Otkaži</div>
                 </div>
             </div>
 
-            <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em d<span className={styles.spanLetter3}>o</span> slat<span className={styles.spanLetter2}>k</span>iša!</h1>
+            <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em <span className={styles.spanLetter3}>do</span> slat<span className={styles.spanLetter2}>ki</span>ša!</h1>
             <div className={styles.grid}>
                 {numbers.map((n) => (
-                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} isAnswerCorrect={false} onNumberClicked={numberClicked}/>
+                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} answerExpected={n.answerExpected} isAnswerCorrect={n.isAnswerCorrect} onNumberClicked={numberClicked} />
                 ))}
             </div>
         </main>

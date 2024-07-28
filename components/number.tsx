@@ -8,6 +8,7 @@ interface Props {
     id: number;
     question: string;
     imageURL: string;
+    answerExpected: string[];
     isAnswerCorrect: boolean;
     onNumberClicked(id: number, question: string) : void;
     // onAnswered(id: number, isAnswerCorrect: boolean): void
@@ -42,6 +43,7 @@ export default function Number(props: Props) {
     return (
         <div className={styles.gridItem} onClick={numberClickedEventHandler}>
             <div className={styles.imageNumber}>{props.id}</div>
+            <img className={props.isAnswerCorrect ? styles.imageVisible : styles.imageHidden} src={props.imageURL}></img>
         </div>
     );
 }
