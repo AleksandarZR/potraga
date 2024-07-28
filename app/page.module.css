@@ -154,4 +154,23 @@
     .grid {
         grid-template-columns: repeat(3, calc(33.33333% - 0.66666rem));
     }
+
+    .imageNumber {
+        font-size: 10vw;
+    }
+}
+
+@media(max-width: 350px) {
+    .headline {
+        font-size: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 100%;
+        column-gap: 0rem;
+    }
+
+    .imageNumber {
+        font-size: 30vw;
+    }
 }

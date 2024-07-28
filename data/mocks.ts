@@ -85,16 +85,16 @@ export const numbers = [
     },
     {
         id: 13,
-        question: "Koje godine se odigrala Kosovska bitka?",
-        answerExpected: ['a', "b", "c"],
-        imageURL: "./images/1.jpg",
+        question: "Rešiti matematičku jednačinu: 2*x + 5 = 19",
+        answerExpected: ['7'],
+        imageURL: "/images/13.jpg",
         isAnswerCorrect: false,
     },
     {
         id: 14,
-        question: "Koje godine se odigrala Kosovska bitka?",
-        answerExpected: ['a', "b", "c"],
-        imageURL: "./images/1.jpg",
+        question: "Koliko stranica ima pravougli paralelopiped?",
+        answerExpected: ['6'],
+        imageURL: "/images/14.jpg",
         isAnswerCorrect: false,
     },
     {

@@ -52,9 +52,16 @@ export default function Home() {
         setPopUpVisible(false);
     }
 
+    const onKeyDown = (e: any) => {
+        if (e.key == 'Enter') {
+            console.log("You hit enter.")
+            buttonPotvrdiClicked();
+        }
+    }
+
     return (
         <main className={styles.main}>
-            <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden}>
+            <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div>{question}</div>
                 <input className={styles.answer} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
                 <div className={styles.buttons}>
