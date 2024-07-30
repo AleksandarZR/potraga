@@ -107,17 +107,25 @@ export default function Home() {
         setDummy('aaa');
     }
 
+    const checkBoxClicked = () => {
+        console.log('checkbox clicked');
+        let element = document.getElementById("infoControl");
+        console.log('element:');
+        console.log(element);
+        element?.removeAttribute("checked");
+        element?.setAttribute('checked', 'false');
+
+    }
+
     return (
         <main className={styles.main}>
-            <input type="checkbox" id="infoControl" className={styles.checkboxDummy} />
-            <label className="btn" htmlFor="infoControl">
+            <input type="checkbox" id="infoControl" className={styles.checkboxDummy} onClick={checkBoxClicked}/>
+            <label className={styles.labelForCheckbox} htmlFor="infoControl">
                 <img className={styles.svg} src="/svg/questionMark.svg"></img>
                 <p className={styles.infoFirst}>Klikni na broj!</p>
                 <p className={styles.infoSecound}>Odgovori tačno!</p>
-                <p className={styles.infoThird}>Zaradi slatkiš</p>
+                <p className={styles.infoThird}>Zaradi slatkiš!</p>
             </label>
-
-
 
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
