@@ -188,6 +188,7 @@
 }
 
 .dummyGrid {
+    display: none;
     margin: 0;
 }
 

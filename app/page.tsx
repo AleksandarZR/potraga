@@ -6,30 +6,38 @@ import { numbers } from '../data/mocks';
 import { useState, useEffect } from 'react';
 import Number from "../components/number";
 
-interface NumberSquare {
+interface FieldState {
     id: number;
-    question: string;
-    imageURL: string;
     isAnswerCorrect: boolean;
 }
-
-var numberSquares = new Array<NumberSquare>();
+var localStorageState = new Array<FieldState>();
 
 export default function Home() {
     const [popUpVisible, setPopUpVisible] = useState(false);
     const [activeNumber, setActiveNumber] = useState(0);
     const [question, setQuestion] = useState("Question");
     const [answer, setAnswer] = useState("");
+    const [dummy, setDummy] = useState("");
 
     useEffect(() => {
         console.log("Initialize called");
-        if (numberSquares.length === 0) {
-            numbers.forEach((n: any) => {
-                console.log('n.id= ' + n.id);
-                const ns: NumberSquare = { id: n.id, question: n.question, imageURL: n.imageURL, isAnswerCorrect: n.isAnswerCorrect };
-                numberSquares.push(ns);
-            });
+        // let dummy = localStorage.getItem("dummy") || "";
+        // setDummy(dummy);
+        // console.log(dummy) ;
+
+        let arrayState: Array<FieldState> | null = localStorageGetState();
+        
+        if (arrayState === null) {
+            localStorageSetState();
+            updateNumbers();
+        } else {
+            localStorageState = arrayState;
+            updateNumbers();
         }
+        //setAnswer('a');
+        // setAnswer("");
+        setDummy('tandara');
+        // setQuestion('asasas');
     }, []);
 
     const numberClicked = (id: number, question: string) => {
@@ -47,6 +55,7 @@ export default function Home() {
     const buttonPotvrdiClicked = () => {
         if (numbers[activeNumber - 1].answerExpected.includes(answer)) {
             numbers[activeNumber - 1].isAnswerCorrect = true;
+            localStorageSetState();
         }
 
         setPopUpVisible(false);
@@ -56,6 +65,41 @@ export default function Home() {
         if (e.key == 'Enter') {
             console.log("You hit enter.")
             buttonPotvrdiClicked();
+        }
+    }
+
+    const localStorageSetState = () => {
+        localStorageState = [];
+        setDummy("");
+
+        for (let i = 0; i < numbers.length; i++) {
+            let fieldState = {
+                id: numbers[i].id,
+                isAnswerCorrect: numbers[i].isAnswerCorrect,
+            }
+            localStorageState.push(fieldState);
+        }
+
+        localStorage.setItem("localStorageState", JSON.stringify(localStorageState));
+    }
+
+    const localStorageGetState = (): Array<FieldState> | null => {
+        let stringArray = localStorage.getItem("localStorageState") || null;
+        console.log('strArr: ' + stringArray);
+        let fieldArray: Array<FieldState> | null;
+        setDummy("");
+
+        if (stringArray != null) {
+            fieldArray = JSON.parse(stringArray);
+        } else {
+            fieldArray = null;
+        }
+        return fieldArray;
+    }
+
+    const updateNumbers = () => {
+        for (let i = 0; i < numbers.length; i ++) {
+            numbers[i].isAnswerCorrect = localStorageState[i].isAnswerCorrect;
         }
     }
 
@@ -75,14 +119,14 @@ export default function Home() {
             <div className={styles.headerContainer}>
                 <img className={styles.cupcake} src="/images/cupcake.png"></img>
                 <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em <span className={styles.spanLetter3}>do</span> slat<span className={styles.spanLetter2}>ki</span>ša!</h1>
-                <img className={styles.cupcake2} src="/images/cupcake2.png"></img>    
+                <img className={styles.cupcake2} src="/images/cupcake2.png"></img>
             </div>
             <div className={styles.grid}>
                 {numbers.map((n) => (
                     <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} answerExpected={n.answerExpected} isAnswerCorrect={n.isAnswerCorrect} onNumberClicked={numberClicked} />
                 ))}
             </div>
-            <div className={styles.dummyGrid}></div>
+            <div className={styles.dummyGrid}>{dummy}</div>
         </main>
     );
 }
