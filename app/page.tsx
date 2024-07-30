@@ -114,7 +114,7 @@ export default function Home() {
         console.log(element);
         element?.removeAttribute("checked");
         element?.setAttribute('checked', 'false');
-
+        element?.setAttribute('unchecked', 'true');
     }
 
     return (
