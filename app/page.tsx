@@ -21,23 +21,17 @@ export default function Home() {
 
     useEffect(() => {
         console.log("Initialize called");
-        // let dummy = localStorage.getItem("dummy") || "";
-        // setDummy(dummy);
-        // console.log(dummy) ;
 
         let arrayState: Array<FieldState> | null = localStorageGetState();
-        
+
         if (arrayState === null) {
             localStorageSetState();
-            updateNumbers();
         } else {
             localStorageState = arrayState;
             updateNumbers();
         }
-        //setAnswer('a');
-        // setAnswer("");
+        // Setting dummy only to assure that render will be called after each refresh
         setDummy('tandara');
-        // setQuestion('asasas');
     }, []);
 
     const numberClicked = (id: number, question: string) => {
@@ -98,14 +92,32 @@ export default function Home() {
     }
 
     const updateNumbers = () => {
-        for (let i = 0; i < numbers.length; i ++) {
+        for (let i = 0; i < numbers.length; i++) {
             numbers[i].isAnswerCorrect = localStorageState[i].isAnswerCorrect;
         }
     }
 
+    const buttonResetClickedEventHandler = () => {
+        for (let i = 0; i < localStorageState.length; i++) {
+            localStorageState[i].isAnswerCorrect = false;
+        }
+
+        updateNumbers();
+        localStorageSetState();
+        setDummy('aaa');
+    }
+
     return (
         <main className={styles.main}>
-            <img className={styles.svg} src="/svg/questionMark.svg"></img>
+            <input type="checkbox" id="infoControl" className={styles.checkboxDummy} />
+            <label className="btn" htmlFor="infoControl">
+                <img className={styles.svg} src="/svg/questionMark.svg"></img>
+                <p className={styles.infoFirst}>Klikni na broj!</p>
+                <p className={styles.infoSecound}>Odgovori tačno!</p>
+                <p className={styles.infoThird}>Zaradi slatkiš</p>
+            </label>
+
+
 
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
@@ -126,7 +138,10 @@ export default function Home() {
                     <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} answerExpected={n.answerExpected} isAnswerCorrect={n.isAnswerCorrect} onNumberClicked={numberClicked} />
                 ))}
             </div>
-            <div className={styles.dummyGrid}>{dummy}</div>
+            <div className={styles.footer}>
+                <p className={styles.dummyText}> {dummy}</p>
+                <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
+            </div>
         </main>
     );
 }
