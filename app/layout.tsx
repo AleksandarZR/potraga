@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Sweet Knowledge",
     description: "Use your knowledge to earn sweets!",
+    keywords: "Sweet knowledge, Slatko znanje, Odgovori tacno i zaradi slatko"
 };
 
 export default function RootLayout({
