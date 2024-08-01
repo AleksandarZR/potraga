@@ -119,7 +119,7 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-            <input type="checkbox" id="infoControl" className={styles.checkboxDummy} onClick={checkBoxClicked}/>
+            <input type="checkbox" id="infoControl" className={styles.checkboxHidden} onClick={checkBoxClicked}/>
             <label className={styles.labelForCheckbox} htmlFor="infoControl">
                 <img className={styles.svg} src="/svg/questionMark.svg"></img>
                 <p className={styles.infoFirst}>Klikni na broj!</p>

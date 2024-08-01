@@ -12,17 +12,7 @@
     background: linear-gradient(lightgreen, rgb(179, 247, 179));
 }
 
-/* #infoControl {
-    display: none;
-    color: red;
-    background-color: greenyellow;
-}
-
- #infoControl:checked + label > p {
-    right: 1rem;
- } */
-
-.checkboxDummy {
+.checkboxHidden {
     display: none;
 }
 
@@ -31,14 +21,17 @@
     z-index: 101;
 }
 
-.checkboxDummy:checked+label>p {
-    /* right: 1rem; */
+.checkboxHidden:checked+label>p {
     animation-name: animation-translate-text;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-iteration-count: 1;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+}
+
+.checkboxHidden:not(:checked)+label>p {
+    opacity: 0;
 }
 
 @keyframes animation-translate-text {
@@ -65,7 +58,7 @@
     100% {
         /* transform: translateX(10rem); */
         /* right: -18rem; */
-        opacity: 0;
+        opacity: 1;
     }
 }
 
@@ -81,7 +74,6 @@
 
 .infoFirst, .infoSecound, .infoThird {
     position: fixed;
-    top: 3rem;
     /* right: -18rem; */
     right: 1rem;
     padding: 0.5rem;
@@ -99,15 +91,18 @@
 }
 
 .infoFirst {
+    top: 3rem;
     animation-delay: 0s;
 }
 
 .infoSecound {
-    animation-delay: 3s;
+    top: 7rem;
+    animation-delay: 1s;
 }
 
 .infoThird {
-    animation-delay: 6s;
+    top: 11rem;
+    animation-delay: 2s;
 }
 
 .popUpWindowHidden {
