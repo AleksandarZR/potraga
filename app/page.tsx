@@ -109,12 +109,12 @@ export default function Home() {
 
     const checkBoxClicked = () => {
         console.log('checkbox clicked');
-        let element = document.getElementById("infoControl");
-        console.log('element:');
-        console.log(element);
-        element?.removeAttribute("checked");
-        element?.setAttribute('checked', 'false');
-        element?.setAttribute('unchecked', 'true');
+        // let element = document.getElementById("infoControl");
+        // console.log('element:');
+        // console.log(element);
+        // element?.removeAttribute("checked");
+        // element?.setAttribute('checked', 'false');
+        // element?.setAttribute('unchecked', 'true');
     }
 
     return (
@@ -129,7 +129,7 @@ export default function Home() {
 
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
-                <input className={styles.answer} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
+                <input className={styles.answer} tabIndex={0} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
                 <div className={styles.buttons}>
                     <div className={styles.button} onClick={buttonPotvrdiClicked}>Potvrdi</div>
                     <div className={styles.button} onClick={buttonOtkaziClicked}>Otkaži</div>
