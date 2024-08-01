@@ -121,7 +121,7 @@ export default function Home() {
         <main className={styles.main}>
             <input type="checkbox" id="infoControl" className={styles.checkboxHidden} onClick={checkBoxClicked}/>
             <label className={styles.labelForCheckbox} htmlFor="infoControl">
-                <img className={styles.svg} src="/svg/questionMark.svg"></img>
+                <img className={styles.svg} src="svg/questionMark.svg"></img>
                 <p className={styles.infoFirst}>Klikni na broj!</p>
                 <p className={styles.infoSecound}>Odgovori tačno!</p>
                 <p className={styles.infoThird}>Zaradi slatkiš!</p>
@@ -137,9 +137,9 @@ export default function Home() {
             </div>
 
             <div className={styles.headerContainer}>
-                <img className={styles.cupcake} src="/images/cupcake.png"></img>
+                <img className={styles.cupcake} src="images/cupcake.png"></img>
                 <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em <span className={styles.spanLetter3}>do</span> slat<span className={styles.spanLetter2}>ki</span>ša!</h1>
-                <img className={styles.cupcake2} src="/images/cupcake2.png"></img>
+                <img className={styles.cupcake2} src="images/cupcake2.png"></img>
             </div>
             <div className={styles.grid}>
                 {numbers.map((n) => (
