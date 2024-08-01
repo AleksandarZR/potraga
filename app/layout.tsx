@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Sweet Knowledge",
-    description: "Use your knowledge to earn sweets!",
-    keywords: "Sweet knowledge, Slatko znanje, Odgovori tacno i zaradi slatko"
+    title: "Znanjem do slatkiša!",
+    description: "Odgovori tačno i zaradi slatko!",
+    keywords: "Sweet knowledge, Slatko znanje, Use your knowledge to earn sweets!, Znanjem do slatkiša!, Odgovori tačno i zaradi slatko!",
 };
 
 export default function RootLayout({
