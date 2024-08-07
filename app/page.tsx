@@ -109,8 +109,6 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-
-
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
                 <input className={styles.answer} tabIndex={0} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
@@ -122,7 +120,7 @@ export default function Home() {
 
             <div className={styles.headerContainer}>
                 <div className={styles.headerLeft}>
-                    <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
+
                 </div>
                 <div className={styles.headerCenter}>
                     <img className={styles.cupcake} src="images/cupcake.png"></img>
@@ -130,6 +128,18 @@ export default function Home() {
                     <img className={styles.cupcake2} src="images/cupcake2.png"></img>
                 </div>
                 <div className={styles.headerRight}>
+
+                </div>
+            </div>
+            <div className={styles.grid}>
+                {numbers.map((n) => (
+                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} answerExpected={n.answerExpected} isAnswerCorrect={n.isAnswerCorrect} onNumberClicked={numberClicked} />
+                ))}
+            </div>
+            <div className={styles.footer}>
+                <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
+                <p className={styles.dummyText}> {dummy}</p>
+                <div className={styles.infoButtonContainer}>
                     <input type="checkbox" id="infoControl" className={styles.checkboxHidden} />
                     <label className={styles.labelForCheckbox} htmlFor="infoControl">
                         {/* <img className={styles.svg} src="svg/questionMark.svg"></img> */}
@@ -139,15 +149,6 @@ export default function Home() {
                         <p className={styles.infoThird}>Zaradi slatkiš!</p>
                     </label>
                 </div>
-            </div>
-            <div className={styles.grid}>
-                {numbers.map((n) => (
-                    <Number key={n.id} id={n.id} question={n.question} imageURL={n.imageURL} answerExpected={n.answerExpected} isAnswerCorrect={n.isAnswerCorrect} onNumberClicked={numberClicked} />
-                ))}
-            </div>
-            <div className={styles.footer}>
-                <p className={styles.dummyText}> {dummy}</p>
-                <div onClick={buttonResetClickedEventHandler}></div>
             </div>
         </main>
     );
