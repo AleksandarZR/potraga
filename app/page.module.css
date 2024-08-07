@@ -222,7 +222,7 @@
 }
 
 .labelForCheckbox {
-    /* position: fixed; */
+    position: relative;
     z-index: 101;
 }
 
@@ -284,10 +284,11 @@
 
 .infoFirst, .infoSecound, .infoThird {
     z-index: 121;
-    position: fixed;
+    position: absolute;
     right: 1rem;
     padding: 0.5rem;
     opacity: 0;
+    width: 20rem;
 
     color: rgb(249, 180, 6);
     font-size: 2rem;
@@ -298,7 +299,6 @@
     background-color: rgb(54, 124, 51);
     border: 1px solid black;
     border-radius: 5px;
-    ;
 }
 
 .infoFirst {
@@ -364,6 +364,11 @@
     .headline {
         padding-left: 0;
         padding-right: 0;
+        font-size: 1.5rem;
+    }
+
+    .infoFirst, .infoSecound, .infoThird {
+        width: 15rem;
         font-size: 1.5rem;
     }
 }
