@@ -10,92 +10,6 @@
     align-items: center;
 }
 
-.checkboxHidden {
-    display: none;
-}
-
-.labelForCheckbox {
-    position: fixed;
-    z-index: 101;
-}
-
-.checkboxHidden:checked+label>p {
-    animation-name: animation-translate-text;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-.checkboxHidden:not(:checked)+label>p {
-    opacity: 0;
-}
-
-@keyframes animation-translate-text {
-    0% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.svg {
-    z-index: 101;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    cursor: pointer;
-}
-
-.infoFirst, .infoSecound, .infoThird {
-    position: fixed;
-    right: 1rem;
-    padding: 0.5rem;
-    opacity: 0;
-
-    color: rgb(249, 180, 6);
-    font-size: 2rem;
-    text-shadow: 2px 2px 2px black;
-    text-align: center;
-
-    /* background-color: aliceblue; */
-    background-color: rgb(54, 124, 51);
-    border: 1px solid black;
-    border-radius: 5px;;
-}
-
-.infoFirst {
-    top: 3rem;
-    animation-delay: 0s;
-}
-
-.infoSecound {
-    top: 7rem;
-    animation-delay: 1s;
-}
-
-.infoThird {
-    top: 11rem;
-    animation-delay: 2s;
-}
-
 .popUpWindowHidden {
     display: none;
 }
@@ -158,9 +72,34 @@
 }
 
 .headerContainer {
+    width: 100%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+.headerLeft {}
+
+.resetButton {
+    margin: 1rem;
+    padding: 0.5rem;
+    min-width: 61px;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 5px 5px 7px black;
+    font-weight: 700;
+    color: rgb(249, 180, 6);
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.headerCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
@@ -207,9 +146,114 @@
     border-radius: 5px;
 }
 
+.headerRight {
+    /* padding-right: 1rem;
+    padding-left: 1rem; */
+}
+
+.checkboxHidden {
+    display: none;
+}
+
+.labelForCheckbox {
+    /* position: fixed; */
+    z-index: 101;
+}
+
+/* .svg {
+    z-index: 1000;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+} */
+
+.infoButton {
+    margin: 1rem;
+    padding: 0.5rem;
+    min-width: 61px;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 5px 5px 7px black;
+    font-weight: 700;
+    color: rgb(249, 180, 6);
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.checkboxHidden:checked+label>p {
+    animation-name: animation-translate-text;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.checkboxHidden:not(:checked)+label>p {
+    opacity: 0;
+}
+
+@keyframes animation-translate-text {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.infoFirst, .infoSecound, .infoThird {
+    z-index: 121;
+    position: fixed;
+    right: 1rem;
+    padding: 0.5rem;
+    opacity: 0;
+
+    color: rgb(249, 180, 6);
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+
+    /* background-color: aliceblue; */
+    background-color: rgb(54, 124, 51);
+    border: 1px solid black;
+    border-radius: 5px;
+    ;
+}
+
+.infoFirst {
+    top: 5rem;
+    animation-delay: 0s;
+}
+
+.infoSecound {
+    top: 9rem;
+    animation-delay: 1s;
+}
+
+.infoThird {
+    top: 13rem;
+    animation-delay: 2s;
+}
+
 .grid {
     width: 80%;
     min-height: 90%;
+    padding-bottom: 5rem;
     /* background-color: blueviolet; */
 
     display: grid;
@@ -272,21 +316,6 @@
     display: none;
 }
 
-.resetButton {}
-
-.resetButton {
-    margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    text-align: center;
-    text-shadow: 1px 1px 2px black;
-    box-shadow: 5px 5px 7px black;
-    font-weight: 700;
-    color: rgb(249, 180, 6);
-    background-color: darkgrey;
-    cursor: pointer;
-}
-
 @media(max-width: 900px) {
     .headline {
         font-size: 2rem;
@@ -303,8 +332,8 @@
 
 @media(max-width: 670px) {
     .svg {
-        top: 0.1rem;
-        right: 0.1rem;
+        /* top: 0.1rem;
+        right: 0.1rem; */
     }
 
     .popUpWindow {
@@ -324,7 +353,12 @@
     }
 
     .headerContainer {
-        padding-top: 2rem;
+        /* padding-top: 2rem; */
+    }
+
+    .headerCenter {
+        /* flex-direction: column;
+        justify-content: center; */
     }
 
     .headline {

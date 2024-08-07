@@ -109,13 +109,7 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-            <input type="checkbox" id="infoControl" className={styles.checkboxHidden}/>
-            <label className={styles.labelForCheckbox} htmlFor="infoControl">
-                <img className={styles.svg} src="svg/questionMark.svg"></img>
-                <p className={styles.infoFirst}>Klikni na broj!</p>
-                <p className={styles.infoSecound}>Odgovori tačno!</p>
-                <p className={styles.infoThird}>Zaradi slatkiš!</p>
-            </label>
+
 
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
@@ -127,9 +121,24 @@ export default function Home() {
             </div>
 
             <div className={styles.headerContainer}>
-                <img className={styles.cupcake} src="images/cupcake.png"></img>
-                <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em <span className={styles.spanLetter3}>do</span> slat<span className={styles.spanLetter2}>ki</span>ša!</h1>
-                <img className={styles.cupcake2} src="images/cupcake2.png"></img>
+                <div className={styles.headerLeft}>
+                    <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
+                </div>
+                <div className={styles.headerCenter}>
+                    <img className={styles.cupcake} src="images/cupcake.png"></img>
+                    <h1 className={styles.headline}>Zna<span className={styles.spanLetter}>nj</span>em <span className={styles.spanLetter3}>do</span> slat<span className={styles.spanLetter2}>ki</span>ša!</h1>
+                    <img className={styles.cupcake2} src="images/cupcake2.png"></img>
+                </div>
+                <div className={styles.headerRight}>
+                    <input type="checkbox" id="infoControl" className={styles.checkboxHidden} />
+                    <label className={styles.labelForCheckbox} htmlFor="infoControl">
+                        {/* <img className={styles.svg} src="svg/questionMark.svg"></img> */}
+                        <div className={styles.infoButton}>Info</div>
+                        <p className={styles.infoFirst}>Klikni na broj!</p>
+                        <p className={styles.infoSecound}>Odgovori tačno!</p>
+                        <p className={styles.infoThird}>Zaradi slatkiš!</p>
+                    </label>
+                </div>
             </div>
             <div className={styles.grid}>
                 {numbers.map((n) => (
@@ -138,7 +147,7 @@ export default function Home() {
             </div>
             <div className={styles.footer}>
                 <p className={styles.dummyText}> {dummy}</p>
-                <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
+                <div onClick={buttonResetClickedEventHandler}></div>
             </div>
         </main>
     );
