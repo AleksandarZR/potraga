@@ -108,7 +108,7 @@ export default function Home() {
     }
 
     return (
-        <main className={styles.main}>
+        <div className={styles.main}>
             <div className={popUpVisible ? styles.popUpWindow : styles.popUpWindowHidden} onKeyDown={(e) => { onKeyDown(e); }}>
                 <div className={styles.question}>{question}</div>
                 <input className={styles.answer} tabIndex={0} value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Ovde upisati odgovor"></input>
@@ -149,6 +149,6 @@ export default function Home() {
                     </label>
                 </div> */}
             </div>
-        </main>
+        </div>
     );
 }
