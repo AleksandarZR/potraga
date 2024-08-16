@@ -139,16 +139,15 @@ export default function Home() {
             <div className={styles.footer}>
                 <div className={styles.resetButton} onClick={buttonResetClickedEventHandler}>Reset</div>
                 <p className={styles.dummyText}> {dummy}</p>
-                <div className={styles.infoButtonContainer}>
+                {/* <div className={styles.infoButtonContainer}>
                     <input type="checkbox" id="infoControl" className={styles.checkboxHidden} />
                     <label className={styles.labelForCheckbox} htmlFor="infoControl">
-                        {/* <img className={styles.svg} src="svg/questionMark.svg"></img> */}
                         <div className={styles.infoButton}>Info</div>
                         <p className={styles.infoFirst}>Klikni na broj!</p>
                         <p className={styles.infoSecound}>Odgovori tačno!</p>
                         <p className={styles.infoThird}>Zaradi slatkiš!</p>
                     </label>
-                </div>
+                </div> */}
             </div>
         </main>
     );

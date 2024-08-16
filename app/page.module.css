@@ -1,6 +1,6 @@
 .main {
-    min-height: 100vh;
-    height: 100%;
+    /* min-height: 100vh; */
+    /* height: 100%; */
     width: 100%;
     background: linear-gradient(lightgreen, rgb(179, 247, 179));
 
@@ -138,6 +138,7 @@
 }
 
 .grid {
+    margin-top: 3rem;
     width: 80%;
     min-height: 90%;
     /* padding-bottom: 5rem; */
@@ -192,10 +193,11 @@
 
 .footer {
     width: 100%;
-    margin: 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
