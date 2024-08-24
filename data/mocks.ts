@@ -66,7 +66,7 @@ export const numbers = [
         id: 10,
         question: "Koja je hemijska oznaka za bakar?",
         answerExpected: ['Cu'],
-        imageURL: "images/10a.png",
+        imageURL: "images/13a.png",
         isAnswerCorrect: false,
     },
     {
