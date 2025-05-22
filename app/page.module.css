@@ -196,6 +196,14 @@
     text-shadow: 2px 2px 5px black;
 }
 
+.hiddenAnswer {
+    margin: 0;
+    font-size: 2vw;
+    font-weight: 700;
+    color: goldenrod;
+    text-shadow: 2px 2px 5px black;
+}
+
 /* ---------------------------------------------------------------------FOOTER--------------------------------------------------------------------- */
 .footer {
     width: 100%;
@@ -334,7 +342,11 @@
     }
 
     .imageNumber {
-        font-size: 10vw;
+        font-size: 8vw;
+    }
+
+    .hiddenAnswer {
+        font-size: 3vw;
     }
 }
 
@@ -406,5 +418,9 @@
 
     .imageNumber {
         font-size: 30vw;
+    }
+
+    .hiddenAnswer {
+        font-size: 10vw;
     }
 }
