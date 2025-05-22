@@ -1,7 +1,8 @@
 export const numbers = [
     {
         id: 1,
-        question: "Koja planeta nedostaje u nizu: Merkur, Venera, Zemlja, Mars, Jupiter, Saturn, Neptun, Pluton ?",
+        // question: "Koja planeta nedostaje u nizu: Merkur, Venera, Zemlja, Mars, Jupiter, Saturn, Neptun, Pluton ?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Uran'],
         // imageURL: "images/01a.png",
         newQuestion: "Učionica 1",
@@ -9,7 +10,8 @@ export const numbers = [
     },
     {
         id: 2,
-        question: "Koji je glavni grad Kanade?",
+        //question: "Koji je glavni grad Kanade?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Otava'],
         //imageURL: "images/02a.jpg",
         newQuestion: "Učionica 2",
@@ -17,15 +19,17 @@ export const numbers = [
     },
     {
         id: 3,
-        question: "Koji je glavni grad Australije?",
+        //question: "Koji je glavni grad Australije?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Kanbera'],
         //imageURL: "images/03a.png",
-        newQuestion: "Učionica 3",
+        newQuestion: "Učionica 3 spomenik",
         isAnswerCorrect: false,
     },
     {
         id: 4,
-        question: "Kako se zove jedini nobelovac iz Srbije?",
+        //question: "Kako se zove jedini nobelovac iz Srbije?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Ivo Andric', 'Ivo Andrić'],
         //imageURL: "images/04a.jpg",
         newQuestion: "Učionica 4",
@@ -33,7 +37,8 @@ export const numbers = [
     },
     {
         id: 5,
-        question: "Koliko iznosi zbir unutrašnjih uglova trougla?",
+        //question: "Koliko iznosi zbir unutrašnjih uglova trougla?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['180', '180 stepeni', '180°'],
         //imageURL: "images/05a.png",
         newQuestion: "Učionica 5",
@@ -41,7 +46,8 @@ export const numbers = [
     },
     {
         id: 6,
-        question: "Unutrašnji uglovi trougla iznose: 45° i 75°. Koliko stepeni iznosi treći ugao?",
+        //question: "Unutrašnji uglovi trougla iznose: 45° i 75°. Koliko stepeni iznosi treći ugao?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['60', '60°', '60 stepeni'],
         //imageURL: "images/06a.png",
         newQuestion: "Učionica 6",
@@ -49,7 +55,8 @@ export const numbers = [
     },
     {
         id: 7,
-        question: "Ako su katete pravouglog trougla dužine 3cm i 4cm, koliko je dugačka hipotenuza?",
+        //question: "Ako su katete pravouglog trougla dužine 3cm i 4cm, koliko je dugačka hipotenuza?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['5', '5cm', '5 cm', '5 centimetara' ],
         //imageURL: "images/07a.png",
         newQuestion: "Učionica 7",
@@ -57,7 +64,8 @@ export const numbers = [
     },
     {
         id: 8,
-        question: "Iz kog vojvođanskog mesta potiče poznati srpski naučnik Mihajlo Pupin?",
+        //question: "Iz kog vojvođanskog mesta potiče poznati srpski naučnik Mihajlo Pupin?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Idvor', "Idvora", "Iz Idvora", 'iz Idvora'],
         //imageURL: "images/08a.png",
         newQuestion: "Učionica 8",
@@ -65,7 +73,8 @@ export const numbers = [
     },
     {
         id: 9,
-        question: "Koji je rezultat sledećeg matematičkog izraza: 20 - 6 : 2 * (8 - 6)",
+        //question: "Koji je rezultat sledećeg matematičkog izraza: 20 - 6 : 2 * (8 - 6)",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['14'],
         //imageURL: "images/09a.png",
         newQuestion: "Učionica 9",
@@ -73,7 +82,8 @@ export const numbers = [
     },
     {
         id: 10,
-        question: "Koja je hemijska oznaka za bakar?",
+        //question: "Koja je hemijska oznaka za bakar?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Cu'],
         //imageURL: "images/13a.png",
         newQuestion: "Učionica 10",
@@ -81,7 +91,8 @@ export const numbers = [
     },
     {
         id: 11,
-        question: "Imena svih kontinenata, osim jednog, počinju slovom \"A\". Koji je to kontinent?",
+        //question: "Imena svih kontinenata, osim jednog, počinju slovom \"A\". Koji je to kontinent?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Evropa'],
         //imageURL: "images/11a.jpg",
         newQuestion: "Učionica 11",
@@ -89,7 +100,8 @@ export const numbers = [
     },
     {
         id: 12,
-        question: "Kako se zove jedini Zemljin satelit?",
+        //question: "Kako se zove jedini Zemljin satelit?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Mesec'],
         //imageURL: "images/12a.png",
         newQuestion: "Učionica 12",
@@ -97,7 +109,8 @@ export const numbers = [
     },
     {
         id: 13,
-        question: "Rešiti matematičku jednačinu: 2*x + 5 = 19",
+        //question: "Rešiti matematičku jednačinu: 2*x + 5 = 19",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['7'],
         //imageURL: "images/13a.png",
         newQuestion: "Učionica 13",
@@ -105,7 +118,8 @@ export const numbers = [
     },
     {
         id: 14,
-        question: "Koliko stranica ima pravougli paralelopiped?",
+        //question: "Koliko stranica ima pravougli paralelopiped?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['6'],
         //imageURL: "images/14a.jpg",
         newQuestion: "Učionica 14",
@@ -113,7 +127,8 @@ export const numbers = [
     },
     {
         id: 15,
-        question: "Koji kontinent nedostaje u nizu: Evropa, Azija, Afrika, Amerika, Australija?",
+        //question: "Koji kontinent nedostaje u nizu: Evropa, Azija, Afrika, Amerika, Australija?",
+        question: "Upiši odgovor na pitanje!",
         answerExpected: ['Antarktik'],
         //imageURL: "images/15a.png",
         newQuestion: "Učionica 15",

@@ -44,6 +44,10 @@ export default function Home() {
         let array = localStorageGetState();
         if (!array) array = [];
 
+        if (array[id - 1].isAnswerCorrect) {
+            return;
+        }
+
         if (id > 1) {
             for (let i = 0; i < id-1; i++) {
                 console.log(array[i]);
