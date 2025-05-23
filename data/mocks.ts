@@ -179,4 +179,13 @@ export const numbers = [
         newQuestion: "Bravo! Pokupi svoju nagradu gde su nastavnici!",
         isAnswerCorrect: false,
     },
+    // {
+    //     id: 21,
+    //     //question: "Koji kontinent nedostaje u nizu: Evropa, Azija, Afrika, Amerika, Australija?",
+    //     question: "Upiši odgovor na pitanje!",
+    //     answerExpected: ['a'],
+    //     //imageURL: "images/15a.png",
+    //     newQuestion: "Bravo! Pokupi svoju nagradu gde su nastavnici!",
+    //     isAnswerCorrect: false,
+    // },
 ];

@@ -123,8 +123,14 @@ export default function Home() {
 
     const updateNumbers = () => {
         for (let i = 0; i < numbers.length; i++) {
-            numbers[i].isAnswerCorrect = localStorageState[i].isAnswerCorrect;
+            if (localStorageState[i] !== undefined && localStorageState[i] !== null) {
+                numbers[i].isAnswerCorrect = localStorageState[i].isAnswerCorrect;
+            } else {
+                numbers[i].isAnswerCorrect = false;
+            }
         }
+
+        localStorageSetState();
     };
 
     const buttonResetClickedEventHandler = () => {
