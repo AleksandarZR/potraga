@@ -12,7 +12,7 @@ export const numbers = [
         id: 2,
         //question: "Koji je glavni grad Kanade?",
         question: "Upiši odgovor na pitanje!",
-        answerExpected: ['A mi me gusta español', 'Me gusta español'],
+        answerExpected: ['A mi me gusta español', 'Me gusta español', 'A mi me gusta espanol', 'Me gusta espanol'],
         //imageURL: "images/02a.jpg",
         newQuestion: "Biblioteka",
         isAnswerCorrect: false,
